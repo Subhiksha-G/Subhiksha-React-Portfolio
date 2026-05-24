@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import ProjectGrid from "./components/ProjectGrid/ProjectGrid";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 function App() {
   const [likes, setLikes] = useState(0);
@@ -61,6 +62,8 @@ function App() {
       </div>
 
       <ProjectGrid allProjects={displayedProjects} />
+
+      <ContactForm />
 
       <div style={{ textAlign: "center", marginTop: "50px" }}>
         <h1 style={{ color: "gold" }}>

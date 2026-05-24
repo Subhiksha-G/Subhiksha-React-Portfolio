@@ -1,0 +1,80 @@
+.react-contact-section {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.contact-title {
+    color: gold;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.react-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    padding: 12px;
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: gold;
+    outline: none;
+}
+
+.form-submit-btn, .reset-form-btn {
+    background: gold;
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.form-submit-btn:hover {
+    transform: translateY(-2px);
+    background: #e6b800;
+}
+
+.form-success-badge {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.form-success-badge h3 {
+    color: gold;
+    margin-top: 0;
+}
+
+.form-success-badge p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
