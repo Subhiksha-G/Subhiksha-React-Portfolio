@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <Navbar logoTitle="SUBHIKSHA G 🚀" />
+      <Navbar logoTitle="SUBHIKSHA G 🚀" countValue={likes} />
       <div style={{ textAlign: "center", marginTop: "50px" }}>
         <h1 style={{ color: "gold" }}>
           Subhiksha's React Portfolio Startup 🚀

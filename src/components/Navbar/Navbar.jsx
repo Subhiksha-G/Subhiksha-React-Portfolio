@@ -7,6 +7,7 @@ function Navbar(props) {
             <ul className='react-navlinks'>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><span className='nav-badge'>Likes : {props.countValue} ❤️</span></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
