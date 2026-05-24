@@ -5,6 +5,12 @@ import ProjectGrid from "./components/ProjectGrid/ProjectGrid";
 function App() {
   const [likes, setLikes] = useState(0);
 
+  const portfolioProjects = [
+        { id: 1, title: "Team Directory App", desc: "A real time user directory  fetching data from a live API.", tech: "Vanilla JS" },
+        { id: 2, title: "Weather Dashboard", desc: "Monitors local atmoshperic changes with an interactive interfaces.", tech: "React" },
+        { id: 3, title: "E-Commerce Cart", desc: "A sleek shopping layout with persistent state item management.", tech: "React" }
+    ];
+
   function handleLikeClick() {
     setLikes(likes + 1);
   }
@@ -13,7 +19,7 @@ function App() {
     <div className="app-container">
       <Navbar logoTitle="SUBHIKSHA G 🚀" countValue={likes} />
 
-      <ProjectGrid />
+      <ProjectGrid allProjects={portfolioProjects} />
       
       <div style={{ textAlign: "center", marginTop: "50px" }}>
         <h1 style={{ color: "gold" }}>
