@@ -1,0 +1,52 @@
+.react-project-section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: gold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.react-project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min-max(300px, 1fr));
+    gap: 20px;
+}
+
+.react-project-card {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    border-top: 1px solid gold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.react-project-card:hover {
+    transform: translateY(-5px);
+}
+
+.react-project-card h3 {
+    margin-top: 0;
+    color: white;
+}
+
+.react-project-card p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tech-tag {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.1);
+    color: gold;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+}

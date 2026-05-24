@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
+import ProjectGrid from "./components/ProjectGrid/ProjectGrid";
 
 function App() {
   const [likes, setLikes] = useState(0);
@@ -11,6 +12,9 @@ function App() {
   return (
     <div className="app-container">
       <Navbar logoTitle="SUBHIKSHA G 🚀" countValue={likes} />
+
+      <ProjectGrid />
+      
       <div style={{ textAlign: "center", marginTop: "50px" }}>
         <h1 style={{ color: "gold" }}>
           Subhiksha's React Portfolio Startup 🚀
