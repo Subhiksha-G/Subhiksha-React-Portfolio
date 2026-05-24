@@ -8,7 +8,7 @@ function App() {
 
   const [showOnlyReact, setShowOnlyReact] = useState(false);
 
-  const portfolioProjects = [
+  const [portfolioProjects, setPortfolioProjects] = useState([
     {
       id: 1,
       title: "Team Directory App",
@@ -27,10 +27,15 @@ function App() {
       desc: "A sleek shopping layout with persistent state item management.",
       tech: "React",
     },
-  ];
+  ]);
 
   function handleLikeClick() {
     setLikes(likes + 1);
+  }
+
+  function deleteProject(projectId) {
+    const updatedProjects = portfolioProjects.filter(project => project.id !== projectId);
+    setPortfolioProjects(updatedProjects);
   }
 
   const displayedProjects = showOnlyReact
@@ -61,7 +66,7 @@ function App() {
         </button>
       </div>
 
-      <ProjectGrid allProjects={displayedProjects} />
+      <ProjectGrid allProjects={displayedProjects} onDeleteProject={deleteProject} />
 
       <ContactForm />
 

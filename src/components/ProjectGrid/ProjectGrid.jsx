@@ -10,6 +10,7 @@ function ProjectGrid(props) {
                         <h3>{project.title}</h3>
                         <p>{project.desc}</p>
                         <span className='tech-tag'>{project.tech}</span>
+                        <button onClick={() => props.onDeleteProject(project.id)} className='delete-project-btn'>🗑️ Delete</button>
                     </div>
                 ))}
                 

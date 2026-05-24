@@ -50,3 +50,19 @@
     font-weight: bold;
     margin-top: 10px;
 }
+
+.delete-project-btn {
+    background: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-project-btn:hover {
+    background: #ff4d4d;
+    color: white;
+}
