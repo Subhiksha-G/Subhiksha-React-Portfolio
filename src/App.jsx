@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import ProjectGrid from "./components/ProjectGrid/ProjectGrid";
 import ContactForm from "./components/ContactForm/ContactForm";
+import Testimonials from "./components/Testimonials/Testimonials";
 
 function App() {
   const [likes, setLikes] = useState(0);
@@ -67,6 +68,8 @@ function App() {
       </div>
 
       <ProjectGrid allProjects={displayedProjects} onDeleteProject={deleteProject} />
+
+      <Testimonials />
 
       <ContactForm />
 
