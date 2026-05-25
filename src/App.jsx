@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import ProjectGrid from "./components/ProjectGrid/ProjectGrid";
-import ContactForm from "./components/ContactForm/ContactForm";
-import Testimonials from "./components/Testimonials/Testimonials";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   const [likes, setLikes] = useState(0);
@@ -47,56 +48,11 @@ function App() {
     <div className="app-container">
       <Navbar logoTitle="SUBHIKSHA G 🚀" countValue={likes} />
 
-      <div style={{ textAlign: "center", marginTop: "30px" }}>
-        <button 
-          onClick={() => setShowOnlyReact(!showOnlyReact)}
-          style={{
-            background: showOnlyReact ? 'gold' : '#333',
-            color: showOnlyReact ? 'black' : 'gold',
-            border: '1px solid gold',
-            padding: '10px 20px',
-            borderRadius: '20px',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            transition: '0.3s'
-          }}
-          >
-          {showOnlyReact
-            ? "⚡ Showing React Only"
-            : "🔍 Filter: React Projects"}
-        </button>
-      </div>
-
-      <ProjectGrid allProjects={displayedProjects} onDeleteProject={deleteProject} />
-
-      <Testimonials />
-
-      <ContactForm />
-
-      <div style={{ textAlign: "center", marginTop: "50px" }}>
-        <h1 style={{ color: "gold" }}>
-          Subhiksha's React Portfolio Startup 🚀
-        </h1>
-        <p style={{ fontSize: "1.2rem", color: "#cccccc" }}>
-          Project Appreciation Score :{" "}
-          <strong style={{ color: "gold" }}>{likes}</strong> ❤️
-        </p>
-        <button
-          onClick={handleLikeClick}
-          style={{
-            background: "#333",
-            color: "gold",
-            border: "1px solid gold",
-            padding: "10px 20px",
-            borderRadius: "20px",
-            cursor: "pointer",
-            fontSize: "1rem",
-            transition: "0.3s",
-          }}
-        >
-          Appreciate Project 👍
-        </button>
-      </div>
+        <Routes>
+          <Route path="/" element={<Home likes={likes} handleLikeClick={handleLikeClick} />} />
+          <Route path="/projects" element={<ProjectsPage displayedProjects={displayedProjects} deleteProject={deleteProject} showOnlyReact={showOnlyReact} setShowOnlyReact={setShowOnlyReact} />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
     </div>
   );
 }
