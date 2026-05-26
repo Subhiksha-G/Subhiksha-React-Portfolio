@@ -5,10 +5,11 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 
 function App() {
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useLocalStorage("project-appreciation-score", 0);
 
   const [showOnlyReact, setShowOnlyReact] = useState(false);
   

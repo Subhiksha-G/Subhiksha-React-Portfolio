@@ -1,9 +1,10 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const ThemeContext = createContext();
 
 export function ThemeProvider({children}) {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useLocalStorage("protfolio-theme", true);
 
     function toggleTheme() {
         setIsDarkMode(!isDarkMode);
