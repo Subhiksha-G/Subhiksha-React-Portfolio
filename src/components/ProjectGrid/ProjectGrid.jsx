@@ -2,7 +2,14 @@ import { memo } from "react";
 import "./ProjectGrid.css";
 
 function ProjectGrid(props) {
-  if (!props.allProjects) return <p style={{ textAlign: "center", color: "gray" }}>No projects found.</p>;
+  if (!props.allProjects || props.allProjects.length === 0) {
+    return(
+        <div style={{ textAlign: "center", color: "gray", padding: '40px' }}>
+            <p style={{fontSize: '1.2rem', fontWeight: 'bold'}}>No projects found.</p>
+            <p style={{fontSize: '0.9rem'}}>Try clearing you search or reloading the page.</p>
+        </div>
+    );
+  }
   return (
     <div className="react-project-section">
       <h2 className="section-title">My Projects</h2>
