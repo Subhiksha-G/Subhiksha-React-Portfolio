@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
+import { ThemeContext } from "./context/ThemeContext";
+import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
-import { ThemeContext } from "./context/ThemeContext";
+
 
 function App() {
   const [likes, setLikes] = useState(0);
