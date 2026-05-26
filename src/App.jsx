@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext";
 import Navbar from "./components/Navbar/Navbar";
@@ -7,13 +7,12 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 
-
 function App() {
   const [likes, setLikes] = useLocalStorage("project-appreciation-score", 0);
 
   const [showOnlyReact, setShowOnlyReact] = useState(false);
-  
-  const {isDarkMode} = useContext(ThemeContext);
+
+  const { isDarkMode } = useContext(ThemeContext);
 
   const [portfolioProjects, setPortfolioProjects] = useState([
     {
@@ -40,24 +39,40 @@ function App() {
     setLikes(likes + 1);
   }
 
-  function deleteProject(projectId) {
-    const updatedProjects = portfolioProjects.filter(project => project.id !== projectId);
-    setPortfolioProjects(updatedProjects);
-  }
+  const deleteProject = useCallback((projectId) => {
+    setPortfolioProjects((prevProjects) =>
+      prevProjects.filter((project) => project.id !== projectId)
+    );
+  }, []);
 
   const displayedProjects = showOnlyReact
-    ? portfolioProjects.filter(project => project.tech === "React")
+    ? portfolioProjects.filter((project) => project.tech === "React")
     : portfolioProjects;
 
   return (
-    <div className={`app-container ${isDarkMode ? "dark-theme" : "light-theme"}`}>
+    <div
+      className={`app-container ${isDarkMode ? "dark-theme" : "light-theme"}`}
+    >
       <Navbar logoTitle="SUBHIKSHA G 🚀" countValue={likes} />
 
-        <Routes>
-          <Route path="/" element={<Home likes={likes} handleLikeClick={handleLikeClick} />} />
-          <Route path="/projects" element={<ProjectsPage displayedProjects={displayedProjects} deleteProject={deleteProject} showOnlyReact={showOnlyReact} setShowOnlyReact={setShowOnlyReact} />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home likes={likes} handleLikeClick={handleLikeClick} />}
+        />
+        <Route
+          path="/projects"
+          element={
+            <ProjectsPage
+              displayedProjects={displayedProjects}
+              deleteProject={deleteProject}
+              showOnlyReact={showOnlyReact}
+              setShowOnlyReact={setShowOnlyReact}
+            />
+          }
+        />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
     </div>
   );
 }
