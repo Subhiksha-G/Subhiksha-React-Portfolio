@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { useContext } from 'react';
+import {ThemeContext} from '../../context/ThemeContext';
 
 function Navbar(props) {
+     const {isDarkMode, toggleTheme} = useContext(ThemeContext);
+
     return(
         <nav className="react-navbar">
             <div className='react-logo'>
@@ -18,6 +22,11 @@ function Navbar(props) {
                 </li>
                 <li>
                     <Link to="/contact">Contact</Link>
+                </li>
+                <li>
+                    <button onClick={toggleTheme} className='theme-toggle-btn'>
+                        {isDarkMode ? "☀️ Light" : "🌙 Dark"}
+                    </button>
                 </li>
                 <li>
                     <span className='nav-badge'>Likes : {props.countValue} ❤️</span>

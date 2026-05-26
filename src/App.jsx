@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
+import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
   const [likes, setLikes] = useState(0);
 
   const [showOnlyReact, setShowOnlyReact] = useState(false);
+  
+  const {isDarkMode} = useContext(ThemeContext);
 
   const [portfolioProjects, setPortfolioProjects] = useState([
     {
@@ -41,11 +44,11 @@ function App() {
   }
 
   const displayedProjects = showOnlyReact
-    ? portfolioProjects.filter((project) => project.tech === "React")
+    ? portfolioProjects.filter(project => project.tech === "React")
     : portfolioProjects;
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${isDarkMode ? "dark-theme" : "light-theme"}`}>
       <Navbar logoTitle="SUBHIKSHA G 🚀" countValue={likes} />
 
         <Routes>
