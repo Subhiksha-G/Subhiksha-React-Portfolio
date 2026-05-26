@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ProjectGrid from "../components/ProjectGrid/ProjectGrid";
 
 function ProjectsPage({
@@ -17,9 +17,13 @@ function ProjectsPage({
     }
   }, []);
 
-  const filteredSearchProjects = displayedProjects.filter((project) =>
+  const filteredSearchProjects = useMemo(() => {
+    console.log("⚡ Calculating filtered projects...");
+    return displayedProjects.filter((project) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+    );
+  }, [displayedProjects, searchQuery]);
+  
 
   return (
     <div style={{ padding: "20px" }}>
