@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import { useLocalStorage } from "./hooks/useLocalStorage";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 function App() {
   const [likes, setLikes] = useLocalStorage("project-appreciation-score", 0);
@@ -41,7 +42,7 @@ function App() {
 
   const deleteProject = useCallback((projectId) => {
     setPortfolioProjects((prevProjects) =>
-      prevProjects.filter((project) => project.id !== projectId)
+      prevProjects.filter((project) => project.id !== projectId),
     );
   }, []);
 
@@ -55,24 +56,26 @@ function App() {
     >
       <Navbar logoTitle="SUBHIKSHA G 🚀" countValue={likes} />
 
-      <Routes>
-        <Route
-          path="/"
-          element={<Home likes={likes} handleLikeClick={handleLikeClick} />}
-        />
-        <Route
-          path="/projects"
-          element={
-            <ProjectsPage
-              displayedProjects={displayedProjects}
-              deleteProject={deleteProject}
-              showOnlyReact={showOnlyReact}
-              setShowOnlyReact={setShowOnlyReact}
-            />
-          }
-        />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+      <ErrorBoundary>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home likes={likes} handleLikeClick={handleLikeClick} />}
+          />
+          <Route
+            path="/projects"
+            element={
+              <ProjectsPage
+                displayedProjects={displayedProjects}
+                deleteProject={deleteProject}
+                showOnlyReact={showOnlyReact}
+                setShowOnlyReact={setShowOnlyReact}
+              />
+            }
+          />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </ErrorBoundary>
     </div>
   );
 }
