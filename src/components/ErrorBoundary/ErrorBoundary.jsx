@@ -25,14 +25,19 @@ class ErrorBoundary extends Component {
           style={{
             padding: "40px",
             textAlign: "center",
-            color: "white",
-            background: "#111",
+            color: "#black",
+            background: "#white",
+            borderRadius: '12px',
+            margin: '40px auto',
+            maxWidth: '500px',
+            border: '2px solid crimson',
+            boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
           }}
         >
-          <h2 style={{ color: "crimson" }}>
+          <h2 style={{ color: "crimson", fontSize: "1.5rem", marginTop: 0 }}>
             Something went wrong inside this view. ⚠️
           </h2>
-          <p>Please refresh the page or try navigating somewhere else.</p>
+          <p style={{color: '#cccccc'}}>Please refresh the page or try navigating somewhere else.</p>
           <button
             onClick={() => window.location.reload()}
             style={{
@@ -42,6 +47,7 @@ class ErrorBoundary extends Component {
               borderRadius: "20px",
               fontWeight: "bold",
               cursor: "pointer",
+              marginTop: '15px'
             }}
           >
             🔄️ Reload App
