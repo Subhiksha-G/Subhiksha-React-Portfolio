@@ -1,15 +1,17 @@
 import { useState } from "react";
 import './ContactForm.css';
 
-function ContactForm() {
+function ContactForm({onSuccess}) {
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-function handleSubmit() {
-    event.preventDefault();
+function handleSubmit(e) {
+    e.preventDefault();
     if (userName && userEmail) {
         setIsSubmitted(true);
+
+        if (onSuccess) onSuccess();
     }
 }
 
