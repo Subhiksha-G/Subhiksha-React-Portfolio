@@ -6,11 +6,6 @@ function ContactPage() {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // const handleFormSubmit = (e) => {
-    //     e.preventDefault();
-    //     setIsModalOpen(true);
-    // };
-
     return(
         <div style={{padding: '20px', marginTop: '40px'}}>
                 <ContactForm onSuccess={() => setIsModalOpen(true)} />

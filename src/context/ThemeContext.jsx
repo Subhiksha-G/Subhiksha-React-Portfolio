@@ -10,9 +10,13 @@ export function ThemeProvider({children}) {
         setIsDarkMode(!isDarkMode);
     }
 
+    const themeClass = isDarkMode ? "dark-theme" : "light-theme";
+
     return(
         <ThemeContext.Provider value={{isDarkMode, toggleTheme}}>
-            {children}
+        <div className={`app-container ${themeClass}`}>
+                {children}
+            </div>
         </ThemeContext.Provider>
     );
 }

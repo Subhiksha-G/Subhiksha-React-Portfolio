@@ -1,32 +1,32 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: white;
+}
+
+.app-container {
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app-container.dark-theme {
   background-color: #121212;
   color: white;
-  min-height: 100vh;
-  transition: all 0.3s ease;
 }
 
 .app-container.light-theme {
   background-color: #f5f5f5;
   color: #121212;
-  min-height: 100vh;
-  transition: all 0.3s ease;
 }
 
 .app-container.light-theme .react-project-card,
 .app-container.light-theme .react-contact-section,
-.app-container.light-theme .testmonials-card {
+.app-container.light-theme .testimonials-card {
   background: white;
   border: 1px solid #dddddd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+.app-container.light-theme h2,
 .app-container.light-theme h3,
 .app-container.light-theme p {
   color: #333333;
