@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ProjectGrid from "../components/ProjectGrid/ProjectGrid";
+import GitHubRepos from "../components/GitHubRepos/GitHubRepos";
 
 function ProjectsPage({
   displayedProjects,
@@ -69,6 +70,8 @@ function ProjectsPage({
         allProjects={filteredSearchProjects}
         onDeleteProject={deleteProject}
       />
+
+      <GitHubRepos />
     </div>
   );
 }

@@ -74,6 +74,14 @@ function App() {
             }
           />
           <Route path="/contact" element={<ContactPage />} />
+
+          <Route path="*" element={
+            <div style={{textAlign: "center", padding: "100px 20px", color: "white"}}>
+              <h1 style={{color: "gold", fontSize: "4rem", margin: "0"}}>404</h1>
+              <h2>Oops! Page Not Found.</h2>
+              <p>The link you clicked doesn't seem to exist.</p>
+            </div>
+          } />
         </Routes>
       </ErrorBoundary>
     </div>
