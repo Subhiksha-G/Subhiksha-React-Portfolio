@@ -31,3 +31,33 @@ body {
 .app-container.light-theme p {
   color: #333333;
 }
+
+.github-repo-card {
+  border: 1px solid #444;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  background-color: #1e1e1e;
+  color: white;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.github-repo-language {
+  background-color: #333333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.app-container.light-theme .github-repo-card {
+  background-color: white;
+  color: #121212;
+  border: 1px solid #dddddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.app-container.light-theme .github-repo-language {
+  background-color: #f0f0f0;
+  color: #333333;
+}

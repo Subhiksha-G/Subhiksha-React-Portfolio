@@ -39,14 +39,7 @@ function GitHubRepos() {
           {repos.map((repo) => (
             <div
               key={repo.id}
-              style={{
-                border: "1px solid #444",
-                padding: "20px",
-                borderRadius: "10px",
-                width: "300px",
-                background: "var(--card-bg, #1e1e1e)",
-                color: "var(--text-main, white)",
-              }}
+              className="github-repo-card"
             >
               <h3 style={{ marginTop: "0" }}>{repo.name}</h3>
               <p style={{ fontSize: "0.9rem", color: "gray" }}>
@@ -60,13 +53,7 @@ function GitHubRepos() {
                 }}
               >
                 <span
-                  style={{
-                    fontSize: "0.8rem",
-                    background: "#333",
-                    padding: "4px 8px",
-                    borderRadius: "5px",
-                    color: "white",
-                  }}
+                  className="github-repo-language"
                 >
                   {repo.language || "Code"}
                 </span>
