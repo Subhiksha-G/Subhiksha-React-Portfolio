@@ -66,3 +66,11 @@
     background: #ff4d4d;
     color: white;
 }
+
+@media (max-width: 768px) {
+    .react-project-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}

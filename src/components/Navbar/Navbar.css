@@ -58,3 +58,17 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+    .react-navbar {
+        flex-direction: column;
+        padding: 1rem 2%;
+        gap: 15px;
+    }
+
+    .react-navlinks {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}

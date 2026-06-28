@@ -61,3 +61,19 @@ body {
   background-color: #f0f0f0;
   color: #333333;
 }
+
+@media (max-width: 768px) {
+  .github-repo-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

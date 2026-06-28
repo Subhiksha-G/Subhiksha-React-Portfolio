@@ -30,3 +30,11 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        min-width: unset;
+        padding: 20px;
+    }
+}
